@@ -8,9 +8,9 @@ export default function Page() {
             Rejoindre le Cercle Math Info
           </h1>
           <p className="text-center">
-            Rejoignez notre cercle et contribuez à la création d'un espace
-            d'apprentissage et d'échange de connaissances sur les maths et les
-            sciences.
+            Rejoignez notre cercle et contribuez à la création d&apos;un espace
+            d&apos;apprentissage et d&apos;échange de connaissances sur les
+            maths et les sciences.
           </p>
         </div>
       </div>
