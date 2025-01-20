@@ -2,6 +2,7 @@
 
 import { Meteors } from "@/components/ui/meteors";
 import { TextAnimate } from "@/components/ui/text-animate";
+import Link from "next/link";
 
 export default function WhyUs() {
   return (
@@ -27,9 +28,12 @@ export default function WhyUs() {
         </TextAnimate>
         {/* </p> */}
 
-        <button className="py-1 px-4 border rounded-full font-semibold hover:scale-105 hover:bg-gray-900 hover:text-white dark:hover:bg-gray-200 dark:hover:text-black transition-all duration-300">
+        <Link
+          href="/Join"
+          className="py-1 px-4 border rounded-full font-semibold hover:scale-105 hover:bg-gray-900 hover:text-white dark:hover:bg-gray-200 dark:hover:text-black transition-all duration-300"
+        >
           Réjoindre
-        </button>
+        </Link>
       </div>
     </div>
   );

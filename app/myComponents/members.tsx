@@ -36,15 +36,18 @@ export default function Members() {
         <Carousel
           className="w-full h-fit"
           opts={{
-            align: "start",
+            // align: "start",
             loop: true,
           }}
         >
           <CarouselContent>
             {members.map((member, index) => (
-              <CarouselItem key={index} className="basis-1/2 md:basis-1/3">
+              <CarouselItem
+                key={index}
+                className="basis-1/2 sm:basis-1/3 md:basis-1/3 lg:basis-1/4 p-2"
+              >
                 {/* Cards */}
-                <div className=" flex flex-col items-center justify-center p-2 border rounded-2xl space-y-2 md:space-y-4">
+                <div className=" flex flex-col items-center justify-center p-2 border rounded-2xl space-y-2 md:space-y-4 shadow-sm">
                   <div className="h-32 md:h-64 w-full flex items-center justify-center border rounded-xl overflow-hidden">
                     {member.imageUrl ? (
                       <Image
@@ -94,7 +97,7 @@ export default function Members() {
         </Link>
 
         <Link
-          href="Join"
+          href="/Join"
           className="px-4 py-1 border rounded-full hover:scale-95 transition-all duration-300 text-indigo-700 border-indigo-500 dark:text-indigo-300  hover:bg-indigo-500 hover:text-white"
         >
           Réjoindre

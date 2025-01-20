@@ -1,7 +1,13 @@
+"use client";
+
+import NavBar from "../myComponents/navBar";
+import Chatbot from "../myComponents/chatBot";
+
 export default function Page() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <div className="flex flex-col items-center justify-center w-full">
+    <>
+      <NavBar />
+      <div className="flex flex-col items-center justify-center h-screen">
         <div className="flex flex-col items-center justify-center w-full">
           {/* Title */}
           <h1 className="text-4xl font-bold text-center">
@@ -13,7 +19,8 @@ export default function Page() {
             maths et les sciences.
           </p>
         </div>
+        <Chatbot />
       </div>
-    </div>
+    </>
   );
 }
