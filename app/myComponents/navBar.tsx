@@ -8,7 +8,6 @@ import { avatars } from "@/lib/avatars";
 import { Button } from "@/components/ui/button";
 import AvatarCircles from "@/components/ui/avatar-circles";
 import ThemeToggle from "./themeToggle";
-import Chatbot from "./chatBot";
 
 // Icons
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
@@ -37,7 +36,7 @@ export default function NavBar() {
             <AvatarCircles numPeople={8} avatarUrls={avatars} />
           </div>
           {/* <IoChatbubbleEllipsesOutline className="text-4xl p-1 border rounded-full" /> */}
-          <Chatbot />
+
           <PiUser className="text-4xl p-1 rounded-full bg-indigo-200 dark:bg-indigo-900" />
         </div>
       </nav>

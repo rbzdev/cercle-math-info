@@ -7,6 +7,7 @@ import WhyUs from "./myComponents/whyUs";
 import Cards from "./myComponents/cards";
 import Members from "./myComponents/members";
 import Sponsors from "./myComponents/sponsors";
+import Chatbot from "./myComponents/chatBot";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Cards />
         <Members />
         <Sponsors />
+        <Chatbot />
       </main>
     </div>
   );

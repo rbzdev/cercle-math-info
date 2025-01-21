@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dialog";
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 
 export default function BecomeSponsor() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -51,13 +52,13 @@ export default function BecomeSponsor() {
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogTrigger asChild>
-          <button className="px-4 py-1 border rounded-full hover:scale-95 transition-all duration-300 text-indigo-700 border-indigo-500 dark:text-indigo-300 hover:bg-indigo-500 hover:text-white">
-            Devenir sponsor
+          <button className="px-4 py-1 border rounded-full hover:scale-95 transition-all duration-300 text-indigo-700 border-indigo-500  hover:bg-indigo-500 hover:text-white">
+            <AnimatedShinyText className="">Devenir sponsor</AnimatedShinyText>
           </button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="w-[95%] sm:max-w-[425px] rounded-2xl">
           <DialogHeader>
-            <DialogTitle>Devenir sponsor</DialogTitle>
+            <DialogTitle>Dévenir sponsor</DialogTitle>
             <DialogDescription>
               Veuillez remplir les informations ci-dessous pour devenir un
               sponsor.
