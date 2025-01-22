@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   images: {
     domains: [
       "avatars.githubusercontent.com",
+      "via.placeholder.com",
+      "picsum.photos",
       "media.licdn.com",
       "cdn.dribbble.com",
       "www.soracert.org",

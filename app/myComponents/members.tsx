@@ -68,8 +68,9 @@ export default function Members() {
                       {member.name}
                     </h4>
                     <p className="text-xs flex items-center gap-1 w-full ">
-                      {" "}
-                      <HiBadgeCheck className="text-xl text-indigo-500 rounded-full" />{" "}
+                      {member.isVerifyed && (
+                        <HiBadgeCheck className="text-xl text-indigo-500 rounded-full" />
+                      )}
                       <span className="line-clamp-1 w-full">
                         {member.title}
                       </span>

@@ -187,7 +187,7 @@ export default function Page() {
             <p className="text-left text-sm mt-6 ">
               Déjà membre ?{" "}
               <Link
-                href="/login"
+                href="/Login"
                 className="text-indigo-600 hover:underline dark:text-indigo-400"
               >
                 Connectez-vous ici

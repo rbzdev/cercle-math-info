@@ -87,8 +87,9 @@ export default function CodeSection() {
           <Image
             src="https://media.licdn.com/dms/image/v2/D5622AQF5cmdOBxs4_w/feedshare-shrink_1280/B56ZRXHuZLGQAk-/0/1736628441564?e=1740009600&v=beta&t=uNkv1kealPmakwMllZVOz0ZLCDGxv-XIwJRszt03hQA"
             alt="code"
-            width={100}
-            height={100}
+            width={400}
+            height={400}
+            priority={false}
             className="h-[60%] w-full object-cover hover:scale-105 transition-all duration-300"
           />
         </Reveal>

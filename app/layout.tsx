@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} bg-gray-100 dark:bg-slate-900 thin-scrollbar antialiased`}
+        className={`${poppins.className} bg-gray-100 dark:bg-slate-900 dark:text-gray-100 thin-scrollbar antialiased`}
       >
         {children}
         <Footer />

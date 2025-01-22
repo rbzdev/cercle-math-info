@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // Components
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import Loader from "@/components/ui/loader";
 
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 
@@ -15,7 +16,7 @@ import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { IoChatbubbleEllipsesOutline, IoClose } from "react-icons/io5";
 import { BsStars } from "react-icons/bs";
 
-const apiKey = process.env.MISTRAL_API_KEY;
+const apiKey = process.env.NEXT_PUBLIC_MISTRAL_API_KEY;
 const client = new Mistral({ apiKey: apiKey });
 
 async function generateResponse(prompt: string) {
@@ -151,11 +152,7 @@ export default function Chatbot() {
                 className="flex-1 dark:border-indigo-300"
               />
               <Button type="submit" className="ml-2" disabled={isThinking}>
-                {isThinking ? (
-                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-t-gray-300 border-b-gray-300 border-l-gray-600 dark:border-l-gray-300"></div>
-                ) : (
-                  "Envoyer"
-                )}
+                {isThinking ? <Loader /> : "Envoyer"}
               </Button>
             </form>
           </motion.div>
