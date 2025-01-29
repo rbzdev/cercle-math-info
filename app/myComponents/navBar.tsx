@@ -1,23 +1,53 @@
 "use client";
 
 // Libs
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { avatars } from "@/lib/avatars";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 // Components
 import AvatarCircles from "@/components/ui/avatar-circles";
 import ThemeToggle from "./themeToggle";
 
 // Icons
-import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { PiUser } from "react-icons/pi";
 
 export default function NavBar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // Scrool state
+  const [isScrolledDown, setIsScrolledDown] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        setIsScrolledDown(true);
+      } else {
+        setIsScrolledDown(false);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+  // if (isMenuOpen) console.log("open");
+  // else console.log("closed");
+
   return (
     <>
       {/* Desktop version */}
-      <nav className="hidden md:flex sticky z-30 top-0 items-center justify-between w-full px-4 py-2 backdrop-blur-sm">
+      <nav
+        className={`hidden md:flex sticky z-30 top-0 items-center justify-between px-4  w-full transition-all duration-300 backdrop-blur-sm ${
+          isScrolledDown
+            ? "py-1 bg-white dark:bg-gray-950/50"
+            : "py-2 bg-transparent"
+        }`}
+      >
         <div className="flex items-center gap-4">
           <Link href="/">
             <Image
@@ -25,7 +55,9 @@ export default function NavBar() {
               alt="Logo"
               width={40}
               height={40}
-              className="h-12 w-12 object-cover border rounded-full "
+              className={`h-12 w-12 object-cover border rounded-full transition-all duration-300 ${
+                isScrolledDown ? "h-8 w-8" : "h-12 w-12"
+              }`}
             />
           </Link>
         </div>
@@ -41,8 +73,6 @@ export default function NavBar() {
           <div className="border p-1 rounded-full">
             <AvatarCircles numPeople={8} avatarUrls={avatars} />
           </div>
-          {/* <IoChatbubbleEllipsesOutline className="text-4xl p-1 border rounded-full" /> */}
-
           <Link href="Login">
             <PiUser className="text-4xl p-1 rounded-full bg-indigo-200 dark:bg-indigo-900" />
           </Link>
@@ -50,7 +80,13 @@ export default function NavBar() {
       </nav>
 
       {/* Mobile version */}
-      <nav className="md:hidden flex sticky z-30 top-0 items-center justify-between w-full p-2 backdrop-blur-sm">
+      <nav
+        className={`md:hidden flex sticky z-30 px-2 top-0 items-center justify-between w-full transition-all duration-300 backdrop-blur-sm ${
+          isScrolledDown
+            ? "py-1 bg-white dark:bg-gray-950/50"
+            : "py-2 bg-transparent"
+        }`}
+      >
         <div className="">
           <Link href="/">
             <Image
@@ -58,28 +94,74 @@ export default function NavBar() {
               alt="Logo"
               width={40}
               height={40}
-              className="h-9 w-9 object-cover border rounded-full "
+              className={`h-9 w-9 object-cover border rounded-full transition-all duration-300 ${
+                isScrolledDown ? "h-6 w-6" : "h-12 w-12"
+              }`}
             />
           </Link>
         </div>
 
-        {/* Toggle burger menu */}
-
-        <div className="flex items-center gap-6">
-          <ThemeToggle />
-
-          <IoChatbubbleEllipsesOutline className="text-4xl p-1 border rounded-full" />
-          <PiUser className="text-4xl p-1 rounded-full bg-indigo-200 dark:bg-indigo-900" />
-        </div>
-
-        <div className="hidden flex-col items-center gap-6">
-          <Link href="#" className="">
-            A propos
+        <div className="flex items-center gap-3">
+          <Link href="Login">
+            <PiUser className="text-4xl p-1 rounded-full bg-indigo-200 dark:bg-indigo-500/20" />
           </Link>
-          <Link href="#">Formations</Link>
-          <Link href="#">Avis</Link>
+
+          {/* Toggle burger menu */}
+          <div
+            className="flex w-8 flex-col items-center justify-center gap-2 md:hidden cursor-pointer"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <div
+              className={`w-full h-[2px] rounded-full bg-gray-500 transition-transform duration-300 ${
+                isMenuOpen ? "rotate-45 translate-y-[4px]" : ""
+              }`}
+            ></div>
+            <div
+              className={`w-full h-[2px] rounded-full bg-gray-500 transition-transform duration-300 ${
+                isMenuOpen ? "-rotate-45 -translate-y-[6px] " : ""
+              }`}
+            ></div>
+          </div>
         </div>
       </nav>
+      {/* Links && Options with animation delay On Mobile */}
+      <motion.div
+        initial={{ x: -50, opacity: 0 }}
+        animate={isMenuOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="fixed z-30 top-0 left-0 h-screen bg-white/80 dark:bg-black/50 backdrop-blur-sm w-5/6 flex flex-col justify-center gap-6 p-6 shadow-lg md:hidden"
+      >
+        {/* Links avec animation décalée */}
+        {["A propos", "Formations", "Avis"].map((text, index) => (
+          <motion.div
+            key={text}
+            initial={{ x: -30, opacity: 0 }}
+            animate={isMenuOpen ? { x: 0, opacity: 1 } : { x: -30, opacity: 0 }}
+            transition={{
+              duration: 0.4,
+              ease: "easeOut",
+              delay: isMenuOpen ? index * 0.15 : 0,
+            }}
+          >
+            <Link href={text}>{text}</Link>
+          </motion.div>
+        ))}
+
+        {/* Toggle Theme avec délai aussi */}
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={
+            isMenuOpen ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }
+          }
+          transition={{
+            duration: 0.4,
+            ease: "easeOut",
+            delay: isMenuOpen ? 0.5 : 0,
+          }}
+        >
+          <ThemeToggle />
+        </motion.div>
+      </motion.div>
     </>
   );
 }

@@ -40,7 +40,7 @@ export default function BecomeSponsor() {
   return (
     <>
       {isAlertVisible && (
-        <div className="fixed z-50 flex top-0 left-1/2 w-full md:w-fit -translate-x-1/2 justify-center p-4 sm:p-6 lg:p-8">
+        <div className="fixed z-30 flex top-0 left-1/2 w-full md:w-fit -translate-x-1/2 justify-center p-4 sm:p-6 lg:p-8">
           <Alert className="bg-indigo-200/50 dark:bg-blue-900/50 text-indigo-500 dark:text-indigo-300 backdrop-blur-sm">
             <AlertTitle>Merci</AlertTitle>
             <AlertDescription>

@@ -67,7 +67,7 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="fixed bottom-2 right-2 z-50">
+    <div className="fixed bottom-2 right-2 z-30">
       {/* Bouton pour ouvrir/fermer le chatbot */}
       <button
         onClick={() => setIsOpen(!isOpen)}

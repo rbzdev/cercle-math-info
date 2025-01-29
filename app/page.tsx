@@ -8,12 +8,14 @@ import Cards from "./myComponents/cards";
 import Members from "./myComponents/members";
 import Sponsors from "./myComponents/sponsors";
 import Chatbot from "./myComponents/chatBot";
+import Loader from "./myComponents/loader";
 
 export default function Home() {
   return (
     <div className="">
       <NavBar />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start p-2 md:p-4 space-y-6 md:space-y-20 overflow-hidden">
+        <Loader />
         <HomeHeader />
         <CodeSection />
         <WhyUs />
