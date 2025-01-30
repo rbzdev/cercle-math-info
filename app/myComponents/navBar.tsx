@@ -42,7 +42,7 @@ export default function NavBar() {
     <>
       {/* Desktop version */}
       <nav
-        className={`hidden md:flex sticky z-30 top-0 items-center justify-between px-4  w-full transition-all duration-300 backdrop-blur-sm ${
+        className={`hidden sm:flex sticky z-30 top-0 items-center justify-between px-4  w-full transition-all duration-300 backdrop-blur-sm ${
           isScrolledDown
             ? "py-1 bg-white dark:bg-gray-950/50"
             : "py-2 bg-transparent"
@@ -62,16 +62,16 @@ export default function NavBar() {
           </Link>
         </div>
         <div className="flex items-center gap-6">
-          <Link href="#" className="">
+          <Link href="About" className="">
             A propos
           </Link>
           <Link href="/Formations">Formations</Link>
-          <Link href="#">Conférences</Link>
+          <Link href="/Meet">Meet</Link>
         </div>
         <div className="flex items-center gap-6">
           <ThemeToggle />
           <div className="border p-1 rounded-full">
-            <AvatarCircles numPeople={8} avatarUrls={avatars} />
+            <AvatarCircles numPeople={99} avatarUrls={avatars} />
           </div>
           <Link href="Login">
             <PiUser className="text-4xl p-1 rounded-full bg-indigo-200 dark:bg-indigo-900" />
@@ -81,7 +81,7 @@ export default function NavBar() {
 
       {/* Mobile version */}
       <nav
-        className={`md:hidden flex sticky z-30 px-2 top-0 items-center justify-between w-full transition-all duration-300 backdrop-blur-sm ${
+        className={`sm:hidden flex sticky z-30 px-2 top-0 items-center justify-between w-full transition-all duration-300 backdrop-blur-sm ${
           isScrolledDown
             ? "py-1 bg-white dark:bg-gray-950/50"
             : "py-2 bg-transparent"
@@ -124,26 +124,34 @@ export default function NavBar() {
           </div>
         </div>
       </nav>
+
       {/* Links && Options with animation delay On Mobile */}
       <motion.div
         initial={{ x: -50, opacity: 0 }}
         animate={isMenuOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed z-30 top-0 left-0 h-screen bg-white/80 dark:bg-black/50 backdrop-blur-sm w-5/6 flex flex-col justify-center gap-6 p-6 shadow-lg md:hidden"
+        className={`fixed top-0 left-0 h-screen bg-white/50 dark:bg-black/50 backdrop-blur-sm w-5/6 flex flex-col justify-center gap-6 p-6 shadow-lg md:hidden ${
+          isMenuOpen ? "z-30" : "-z-10"
+        }`}
       >
         {/* Links avec animation décalée */}
-        {["A propos", "Formations", "Avis"].map((text, index) => (
+        {["A propos", "Formations", "Meet"].map((text, index) => (
           <motion.div
             key={text}
             initial={{ x: -30, opacity: 0 }}
             animate={isMenuOpen ? { x: 0, opacity: 1 } : { x: -30, opacity: 0 }}
             transition={{
-              duration: 0.4,
+              duration: 0.5,
               ease: "easeOut",
               delay: isMenuOpen ? index * 0.15 : 0,
             }}
           >
-            <Link href={text}>{text}</Link>
+            <Link
+              href={text === "A propos" ? "/About" : text}
+              className="text-2xl hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors duration-300"
+            >
+              {text}
+            </Link>
           </motion.div>
         ))}
 

@@ -105,6 +105,7 @@ export default function CodeSection() {
           <div className="h-full w-full rounded-xl overflow-hidden">
             <Image
               src="https://cdn.dribbble.com/users/1732368/screenshots/16278100/media/800ffe4c674f793c42c0f5397bc0285a.gif"
+              unoptimized={true}
               alt="gif codeCamp"
               height={100}
               width={100}

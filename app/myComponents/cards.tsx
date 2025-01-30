@@ -1,6 +1,7 @@
 "use client";
 
 // Libs
+import Link from "next/link";
 import Reveal from "@/lib/useHook/reveal";
 
 // icons
@@ -37,9 +38,12 @@ export default function Cards() {
       {/* Header */}
       <div className="flex flex-col md:flex-row gap-2 md:items-center justify-between">
         <div className="flex gap-2 items-center">
-          <button className="bg-indigo-200 text-black px-4 py-2 border rounded-full">
+          <Link
+            href="/Members"
+            className="bg-indigo-200 text-black px-4 py-2 border rounded-full hover:bg-indigo-400 transition-all duration-300"
+          >
             Explore
-          </button>
+          </Link>
           <span className="ml-4 inline-flex gap-2">
             <button className="bg-indigo-200 w-8 h-8 border rounded-full"></button>
             <button className="bg-indigo-200 w-8 h-8 border rounded-full"></button>
@@ -49,7 +53,7 @@ export default function Cards() {
         <div className="flex gap-2 items-center">
           <AvatarCircles numPeople={0} avatarUrls={avatars} />
           <span className="dark:text-slate-300 text-xs md:text-sm">
-            +17k membres depuis 2020
+            +17k membres depuis 2015
           </span>
         </div>
       </div>

@@ -108,10 +108,13 @@ export default function Loader() {
           repeatType: "reverse",
           repeatDelay: 0.5, // Délai avant de revenir en arrière
         }}
-        className="absolute left-0 bottom-10 w-full text-center md:whitespace-nowrap flex flex-col items-center justify-center"
+        className="absolute left-0 bottom-32 w-full text-center md:whitespace-nowrap flex flex-col items-center justify-center"
       >
         <p> Faculté des sciences </p>
-        <h2 className="text-lg font-bold"> Université de Lubumbashi </h2>
+        <h2 className="text-lg font-bold text-gray-500">
+          {" "}
+          Université de Lubumbashi{" "}
+        </h2>
       </motion.div>
     </motion.div>
   );

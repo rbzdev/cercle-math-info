@@ -3,7 +3,7 @@ import Link from "next/link";
 // icons
 import { TbBrandLinkedinFilled } from "react-icons/tb";
 import { FaFacebook } from "react-icons/fa6";
-import { RiInstagramFill } from "react-icons/ri";
+import { FaWhatsapp } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
@@ -76,7 +76,7 @@ export default function Footer() {
               <TbBrandLinkedinFilled className="text-xl md:text-4xl hover:text-blue-400" />{" "}
             </a>
             <a
-              href="https://www.linkedin.com/company/cercle-scientifique-math-info/posts/?feedView=all"
+              href="https://www.facebook.com/profile.php?id=61570028531958"
               target="_blank"
             >
               {" "}
@@ -89,11 +89,10 @@ export default function Footer() {
               <FaXTwitter className="text-xl md:text-4xl hover:text-black hover:bg-white rounded-md" />
             </a>
             <a
-              href="https://www.linkedin.com/company/cercle-scientifique-math-info/posts/?feedView=all"
+              href="https://chat.whatsapp.com/Jt1SDlpq7Ot34Po6hGemya"
               target="_blank"
             >
-              {" "}
-              <RiInstagramFill className="text-xl md:text-4xl hover:bg-gradient-to-t from-rose-400 to-indigo-500 hover:text-white rounded-md" />{" "}
+              <FaWhatsapp className="hover:text-green-500 text-xl md:text-4xl" />{" "}
             </a>
           </div>
         </div>

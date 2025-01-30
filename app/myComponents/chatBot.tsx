@@ -76,11 +76,11 @@ export default function Chatbot() {
         } transition`}
       >
         {isOpen ? (
-          <IoClose className="text-xl" />
+          <IoClose className="text-xl dark:text-gray-200" />
         ) : (
           <div>
             <BsStars className="text-2xl absolute -top-1 -left-1 dark:text-white" />
-            <IoChatbubbleEllipsesOutline className="text-3xl" />
+            <IoChatbubbleEllipsesOutline className="text-3xl dark:text-gray-400" />
           </div>
         )}
       </button>
@@ -110,16 +110,18 @@ export default function Chatbot() {
             <div className="p-4 h-64 flex-1 overflow-y-auto thin-scrollbar">
               {history.length === 0 ? (
                 <div className="relative h-full flex flex-col justify-center items-center">
-                  <AnimatedShinyText className="text-gray-600 text-center font-bold">
+                  <AnimatedShinyText className="text-sm text-gray-600 text-center font-bold mb-6">
                     Posez-moi une question sur le cercle scientifique !
                   </AnimatedShinyText>
 
                   <span className="text-xs text-gray-300 dark:text-gray-700 mt-2 absolute bottom-0">
-                    Ce chatbot n&apos;est pas un plugin, il utilise l&apos;API
-                    de Mistral AI pour répondre à vos questions. Par ailleurs,
-                    nous pourrions le finetuner pour qu&apos;il réponde
-                    uniquement aux questions sur le cercle scientifique
-                    Math-info.
+                    Ce chatbot a été codé manuellement et utilise l&apos;API de
+                    Mistral AI pour répondre aux questions. Nous pouvons le{" "}
+                    <span className=" font-semibold text-gray-500">
+                      finetuner
+                    </span>{" "}
+                    pour qu&apos;il réponde uniquement aux questions sur le
+                    cercle scientifique Math-info.
                   </span>
                 </div>
               ) : (
