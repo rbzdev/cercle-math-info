@@ -20,7 +20,7 @@ export default function Loader() {
         initial={{ scale: 1.5 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.3, scale: { delay: 2.5 } }}
-        className=" "
+        className=""
       >
         {/* Apparition principale */}
         <motion.div

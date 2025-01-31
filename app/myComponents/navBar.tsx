@@ -1,7 +1,7 @@
 "use client";
 
 // Libs
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { avatars } from "@/lib/avatars";
 import Image from "next/image";
@@ -18,33 +18,24 @@ export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // Scrool state
   const [isScrolledDown, setIsScrolledDown] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY) {
-        setIsScrolledDown(true);
-      } else {
-        setIsScrolledDown(false);
-      }
-      setLastScrollY(currentScrollY);
-    };
+  function setFixed() {
+    if (window.scrollY >= 100) {
+      setIsScrolledDown(true);
+    } else {
+      setIsScrolledDown(false);
+    }
+  }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
-
-  // if (isMenuOpen) console.log("open");
-  // else console.log("closed");
+  window.addEventListener("scroll", setFixed);
 
   return (
     <>
       {/* Desktop version */}
       <nav
-        className={`hidden sm:flex sticky z-30 top-0 items-center justify-between px-4  w-full transition-all duration-300 backdrop-blur-sm ${
+        className={`hidden md:flex sticky z-30 top-0 items-center justify-between px-4  w-full transition-all duration-300 backdrop-blur-sm ${
           isScrolledDown
-            ? "py-1 bg-white dark:bg-gray-950/50"
+            ? "py-1 bg-white dark:bg-gray-950/70"
             : "py-2 bg-transparent"
         }`}
       >
@@ -61,7 +52,11 @@ export default function NavBar() {
             />
           </Link>
         </div>
-        <div className="flex items-center gap-6">
+        <div
+          className={`flex items-center gap-6 ${
+            isScrolledDown ? "text-gray-500" : ""
+          }`}
+        >
           <Link href="About" className="">
             A propos
           </Link>
@@ -81,9 +76,9 @@ export default function NavBar() {
 
       {/* Mobile version */}
       <nav
-        className={`sm:hidden flex sticky z-30 px-2 top-0 items-center justify-between w-full transition-all duration-300 backdrop-blur-sm ${
+        className={`md:hidden flex sticky z-30 px-2 top-0 items-center justify-between w-full transition-all duration-300 backdrop-blur-sm ${
           isScrolledDown
-            ? "py-1 bg-white dark:bg-gray-950/50"
+            ? "py-1 bg-white dark:bg-gray-950/70"
             : "py-2 bg-transparent"
         }`}
       >
@@ -94,7 +89,7 @@ export default function NavBar() {
               alt="Logo"
               width={40}
               height={40}
-              className={`h-9 w-9 object-cover border rounded-full transition-all duration-300 ${
+              className={`h-9 w-9 object-cover border rounded-full transition-all duration-100 ${
                 isScrolledDown ? "h-6 w-6" : "h-12 w-12"
               }`}
             />
@@ -112,13 +107,17 @@ export default function NavBar() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <div
-              className={`w-full h-[2px] rounded-full bg-gray-500 transition-transform duration-300 ${
-                isMenuOpen ? "rotate-45 translate-y-[4px]" : ""
+              className={`w-full h-[2px] rounded-full  transition-transform duration-300 ${
+                isMenuOpen
+                  ? "rotate-45 translate-y-[4px] bg-slate-400"
+                  : " bg-gray-700 dark:bg-white"
               }`}
             ></div>
             <div
-              className={`w-full h-[2px] rounded-full bg-gray-500 transition-transform duration-300 ${
-                isMenuOpen ? "-rotate-45 -translate-y-[6px] " : ""
+              className={`w-full h-[2px] rounded-full transition-transform duration-300 ${
+                isMenuOpen
+                  ? "-rotate-45 -translate-y-[6px] bg-slate-400"
+                  : "bg-gray-700 dark:bg-white"
               }`}
             ></div>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 // Libs
+import Link from "next/link";
 import Image from "next/image";
 
 // Components
@@ -28,7 +29,10 @@ export default function CodeSection() {
         {/* Card 1 */}
         <Reveal className="h-52 md:h-4/6 w-full flex flex-col justify-between bg-indigo-100 dark:bg-gray-900 p-2 border rounded-2xl shadow-md">
           <div className="w-full flex justify-evenly items-center">
-            <div className="w-fit flex items-center justify-between p-1 bg-white dark:bg-gray-800 text-black dark:text-gray-100 border dark:border-gray-700 rounded-full space-x-1">
+            <Link
+              href="/Members"
+              className="w-fit flex items-center justify-between p-1 bg-white dark:bg-gray-800 text-black dark:text-gray-100 border dark:border-gray-700 rounded-full space-x-1"
+            >
               <Image
                 src="https://media.licdn.com/dms/image/v2/C4D03AQE5WsIDln3x1A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1660916805076?e=1742428800&v=beta&t=4BEo_dDKsDjqi9ET31HuYGw35Zyw4Vv20cFyyzvkplc"
                 alt="code"
@@ -40,7 +44,7 @@ export default function CodeSection() {
                 Le formateur de l&apos;année
               </p>
               <BsArrowRight className="text-2xl" />
-            </div>
+            </Link>
 
             <div className="bg-white dark:bg-gray-800 text-black dark:text-gray-100 border dark:border-gray-700 rounded-full p-2">
               <GoBell />
@@ -66,9 +70,12 @@ export default function CodeSection() {
         >
           <div className="h-[40%] p-2 md:p-4 flex flex-col gap-2">
             <div className="flex items-center justify-between w-full">
-              <button className="px-4 py-1 rounded-full bg-gray-200 dark:bg-gray-700 hover:scale-105 transition-all duration-300">
+              <Link
+                href="/Formations"
+                className="px-4 py-1 rounded-full bg-gray-200 dark:bg-gray-700 hover:scale-105 transition-all duration-300"
+              >
                 En savoir plus
-              </button>
+              </Link>
               <BiSupport className="text-3xl p-1 border dark:border-gray-600 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 hover:scale-105 transition-all duration-300 cursor-pointer" />
             </div>
 
@@ -98,9 +105,12 @@ export default function CodeSection() {
         <Reveal className="h-52 md:h-1/2 w-full flex flex-col items-end rounded-3xl space-y-2">
           <div className="flex items-center space-x-2 text-indigo-800 dark:text-indigo-100">
             <GoPlus className="text-3xl bg-indigo-300 dark:bg-indigo-800 rounded-full" />
-            <h3 className="text-xs p-2 bg-indigo-300 dark:bg-indigo-800 rounded-full">
+            <Link
+              href="/Formations"
+              className="text-xs p-2 bg-indigo-300 dark:bg-indigo-800 rounded-full hover:scale-105 transition-all duration-300"
+            >
               Explorer l&apos;opportunité
-            </h3>
+            </Link>
           </div>
           <div className="h-full w-full rounded-xl overflow-hidden">
             <Image

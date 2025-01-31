@@ -31,7 +31,7 @@ export default function AllFormations() {
           >
             {/* Image et contenu principal */}
             <div className="flex flex-col md:flex-row gap-4">
-              <div className="h-40 w-full md:w-40 border rounded-xl overflow-hidden">
+              <div className="h-72 md:h-40 w-full md:w-40 border rounded-xl overflow-hidden">
                 <Image
                   src={formation.image || "https://picsum.photos/200"}
                   alt="formation"

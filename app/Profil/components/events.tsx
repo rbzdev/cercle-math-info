@@ -64,7 +64,7 @@ export default function Events() {
         </ul>
 
         <Link
-          href="/Events"
+          href="/Meet"
           className="py-1 w-fit px-2 text-sm border rounded-full text-indigo-500 hover:scale-105 dark:hover:bg-gray-700 transition"
         >
           Prochains evenements

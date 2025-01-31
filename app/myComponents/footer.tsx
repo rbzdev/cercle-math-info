@@ -14,25 +14,20 @@ export default function Footer() {
         {/* Liens utiles */}
         <div className="flex flex-col justify-center gap-4 text-sm">
           <Link
-            href="#"
+            href="/About"
             className="hover:text-slate-500 dark:hover:text-slate-400"
           >
-            About Us
+            A propos
           </Link>
+
           <Link
-            href="#"
-            className="hover:text-slate-500 dark:hover:text-slate-400"
-          >
-            Contact
-          </Link>
-          <Link
-            href="#privacy"
+            href="#Privacy"
             className="hover:text-slate-500 dark:hover:text-slate-400"
           >
             Politique de confidentialité
           </Link>
           <Link
-            href="#terms"
+            href="#Terms"
             className="hover:text-slate-500 dark:hover:text-slate-400"
           >
             Termes et conditions
@@ -42,21 +37,21 @@ export default function Footer() {
         {/* Espace Maths */}
         <div className="flex flex-col justify-center gap-4 text-sm">
           <Link
-            href=""
+            href="/Meet"
             className="hover:text-slate-500 dark:hover:text-slate-400"
           >
             {" "}
             Conférences{" "}
           </Link>
           <Link
-            href=""
+            href="/Profil"
             className="hover:text-slate-500 dark:hover:text-slate-400"
           >
             {" "}
             Événements{" "}
           </Link>
           <Link
-            href=""
+            href="#Blog"
             className="hover:text-slate-500 dark:hover:text-slate-400"
           >
             {" "}

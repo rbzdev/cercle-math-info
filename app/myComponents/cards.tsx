@@ -59,7 +59,7 @@ export default function Cards() {
       </div>
 
       {/* Cards */}
-      <div className="relative mt-10 h-80 w-full">
+      <div className="relative mt-10 h-96 w-full">
         {/* Cards section 1 */}
         <div className="absolute w-full h-1/2 md:w-1/2 md:h-3/4 p-1 left-0 top-0 grid grid-cols-2 gap-2 items-end">
           {/* Card 1 */}
