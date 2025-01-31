@@ -1,8 +1,20 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function Loader() {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsSmallScreen(window.innerWidth < 768); // Détecte un écran de moins de 768px (taille mobile)
+    };
+
+    checkScreenSize(); // Vérifie au montage
+    window.addEventListener("resize", checkScreenSize); // Met à jour quand on redimensionne l'écran
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
   return (
     // Div Principale pour la disparition
     <motion.div
@@ -49,9 +61,13 @@ export default function Loader() {
                 }),
                 x:
                   index === 1 || index === 3
-                    ? -200
+                    ? isSmallScreen
+                      ? -100
+                      : -200
                     : index === 2 || index === 4
-                    ? 200
+                    ? isSmallScreen
+                      ? 100
+                      : 200
                     : 0,
               }}
               transition={{
@@ -71,7 +87,7 @@ export default function Loader() {
                   ease: "easeInOut",
                 },
               }}
-              className="w-12 h-12 bg-indigo-500 rounded-xl"
+              className="w-10 h-10 md:w-12 md:h-12 bg-indigo-500 rounded-xl"
             />
           ))}
 
@@ -90,7 +106,7 @@ export default function Loader() {
               repeatType: "reverse",
               repeatDelay: 1.8,
             }}
-            className="absolute inset-0 flex items-center justify-center text-4xl font-semibold whitespace-nowrap"
+            className="absolute inset-0 flex items-center justify-center text-xl md:text-4xl font-semibold whitespace-nowrap"
           >
             Bienvenu au Cercle
           </motion.div>
@@ -111,7 +127,7 @@ export default function Loader() {
         className="absolute left-0 bottom-32 w-full text-center md:whitespace-nowrap flex flex-col items-center justify-center"
       >
         <p> Faculté des sciences </p>
-        <h2 className="text-lg font-bold text-gray-500">
+        <h2 className="text-md md:text-lg font-bold text-gray-500">
           {" "}
           Université de Lubumbashi{" "}
         </h2>
