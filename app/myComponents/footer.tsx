@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-col items-center justify-center gap-6 mt-16 p-4 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-t">
       {/* Liens de navigation */}
-      <div className="grid grid-cols-2 space-y-4 md:space-y-0 md:flex md:justify-between items-start w-full">
+      <div className="grid grid-cols-2 gap-8 md:flex md:justify-between items-start w-full">
         {/* Liens utiles */}
         <div className="flex flex-col justify-center gap-4 text-sm">
           <Link
@@ -24,7 +24,10 @@ export default function Footer() {
             href="#Privacy"
             className="hover:text-slate-500 dark:hover:text-slate-400"
           >
-            Politique de confidentialité
+            <span className="block md:hidden">Pol. de Confid.</span>
+            <span className="hidden md:block">
+              Politique de confidentialité
+            </span>
           </Link>
           <Link
             href="#Terms"

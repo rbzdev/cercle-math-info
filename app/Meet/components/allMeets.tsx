@@ -66,7 +66,7 @@ export default function AllMeets() {
                 {/* Event footer */}
                 <div className="w-full flex flex-col md:flex-row items-center justify-between gap-2">
                   {/* Date et heure */}
-                  <div className="flex h-fit items-center border rounded-xl gap-1 p-1 pr-2 bg-white dark:bg-black flex-1">
+                  <div className="flex w-full h-fit items-center border rounded-xl gap-1 p-1 pr-2 bg-white dark:bg-black flex-1">
                     <LuCalendarDays className="p-[2px] text-3xl border rounded-md bg-gray-300 dark:bg-gray-600" />
                     <p className="text-xs text-gray-500 dark:text-gray-400 flex flex-col">
                       <span className="truncate text-[11px] ">{meet.date}</span>
