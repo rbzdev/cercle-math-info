@@ -40,8 +40,9 @@ export default function HomeHeader() {
             variant="ghost"
             className="dark:text-indigo-500 md:dark:text-gray-200 hover:scale-95 transition-all duration-300 border dark:border-none md:border-none"
           >
-            {" "}
-            <span> En savoir plus </span> <BsArrowRight />{" "}
+            <Link href="/About" className="flex items-center gap-2">
+              <span> En savoir plus </span> <BsArrowRight />
+            </Link>
           </Button>
         </div>
       </div>

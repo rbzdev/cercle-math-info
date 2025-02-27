@@ -7,6 +7,9 @@ import Image from "next/image";
 // Components
 import Reveal from "@/lib/useHook/reveal";
 
+// Images
+const conference = "/assets/conference01.jpeg";
+
 // Icons
 import { BiSupport } from "react-icons/bi";
 import { BsArrowRight } from "react-icons/bs";
@@ -66,7 +69,7 @@ export default function CodeSection() {
         {/* Card 2 */}
         <Reveal
           delay={600}
-          className="h-80 md:h-full w-full rounded-2xl border bg-white dark:bg-gray-800 text-black dark:text-gray-100 overflow-hidden"
+          className="h-80 md:h-full w-full rounded-2xl border bg-white dark:bg-gray-800 text-black dark:text-gray-100 overflow-hidden "
         >
           <div className="h-[40%] p-2 md:p-4 flex flex-col gap-2">
             <div className="flex items-center justify-between w-full">
@@ -91,8 +94,9 @@ export default function CodeSection() {
               </div>
             </div>
           </div>
+
           <Image
-            src="https://media.licdn.com/dms/image/v2/D5622AQF5cmdOBxs4_w/feedshare-shrink_1280/B56ZRXHuZLGQAk-/0/1736628441564?e=1740009600&v=beta&t=uNkv1kealPmakwMllZVOz0ZLCDGxv-XIwJRszt03hQA"
+            src={conference}
             alt="code"
             width={400}
             height={400}

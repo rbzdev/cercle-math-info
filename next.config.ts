@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
       "www.unilu.ac.cd",
       "i0.wp.com",
       "udbl.ac.cd",
+      "i.pinimg.com",
     ],
   },
 };

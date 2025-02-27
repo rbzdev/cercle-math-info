@@ -5,6 +5,7 @@ import { TbBrandLinkedinFilled } from "react-icons/tb";
 import { FaFacebook } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
+import { LuBicepsFlexed } from "react-icons/lu";
 
 export default function Footer() {
   return (
@@ -101,8 +102,11 @@ export default function Footer() {
 
       {/* Crédits et droits réservés */}
       <div className="flex flex-col md:flex-row items-center justify-between w-full text-xs md:text-sm gap-2">
-        <p className="text-slate-300 dark:text-slate-600">
-          Made with ❤️ by{" "}
+        <p className="text-slate-300 dark:text-slate-600 flex items-center flex-nowrap gap-1">
+          {/* Made with ❤️ by{" "} */}
+          <span className="flex items-center flex-nowrap gap-1">
+            Made with <LuBicepsFlexed className="text-lg text-orange-600" /> by
+          </span>
           <a
             href="https://www.linkedin.com/in/olivier-rubuz-576322246"
             target="_blank"

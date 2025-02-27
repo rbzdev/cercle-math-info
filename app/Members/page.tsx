@@ -26,7 +26,7 @@ export default function Page() {
           {members.map((member, index) => (
             <div
               key={index}
-              className=" space-y-2 border p-1 md:p-2 rounded-2xl shadow-sm dark:hover:bg-gray-600 hover:bg-white hover:scale-95 transition-all duration-300"
+              className=" space-y-2 border p-1 md:p-2 rounded-2xl shadow-sm dark:hover:bg-slate-800 hover:bg-white hover:scale-95 transition-all duration-300"
             >
               <div className=" h-32 md:h-64 rounded-xl border flex items-center justify-center overflow-hidden">
                 {member.imageUrl ? (
@@ -35,7 +35,7 @@ export default function Page() {
                     alt={`${member.name || "Membre"} image`}
                     height={200}
                     width={200}
-                    className="size-full object-cover hover:scale-105 transition-all duration-300"
+                    className="size-full object-cover hover:scale-125 transition-all duration-300 dark:saturate-50"
                   />
                 ) : (
                   <div className="flex justify-center items-center h-full w-full rounded-xl bg-gray-200 dark:bg-gray-800">
