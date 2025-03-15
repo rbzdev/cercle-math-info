@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
 
   images: {
+    unoptimized: true,
     domains: [
       "avatars.githubusercontent.com",
       "via.placeholder.com",
