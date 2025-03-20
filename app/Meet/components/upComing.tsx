@@ -66,10 +66,10 @@ export default function UpComingMeets() {
                         alt={meet.author}
                         width={20}
                         height={20}
-                        className="rounded-full"
+                        className="rounded-full object-cover h-8 w-8 border-2 "
                       />
                     ) : (
-                      <HiUserGroup className="text-xl  border rounded-full" />
+                      <HiUserGroup className="text-3xl  border-2 rounded-full" />
                     )}
                     <span className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
                       <span>{meet.author}</span>

@@ -37,7 +37,7 @@ export default function CodeSection() {
               className="w-fit flex items-center justify-between p-1 bg-white dark:bg-gray-800 text-black dark:text-gray-100 border dark:border-gray-700 rounded-full space-x-1"
             >
               <Image
-                src="https://media.licdn.com/dms/image/v2/C4D03AQE5WsIDln3x1A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1660916805076?e=1742428800&v=beta&t=4BEo_dDKsDjqi9ET31HuYGw35Zyw4Vv20cFyyzvkplc"
+                src="/assets/users/degaul.jpeg"
                 alt="code"
                 width={20}
                 height={20}
