@@ -1,0 +1,102 @@
+# ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat&logo=tailwind-css&logoColor=white)
+
+# Cercle Math Info
+
+Le **Cercle Scientifique** est une communauté d’étudiants passionnés par les technologies, l’informatique et le développement. Ce projet a pour but de créer une plateforme interactive où les membres peuvent se rencontrer, partager des formations et participer à des événements.
+
+## Fonctionnalités clés
+
+- **Formations** : Accédez à une liste de formations proposées par la communauté.
+- **Événements** : Consultez les événements à venir et passés.
+- **Membres** : Découvrez les membres de la communauté et leurs profils.
+- **Inscription** : Rejoignez la communauté facilement.
+- **Connexion** : Accédez à votre profil et gérez vos informations.
+
+## Tech Stack
+
+| Technologie         | Description                   |
+|---------------------|-------------------------------|
+| ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white) | Framework React pour le rendu côté serveur. |
+| ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black) | Bibliothèque JavaScript pour construire des interfaces utilisateur. |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white) | Superset de JavaScript qui ajoute des types statiques. |
+| ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat&logo=tailwind-css&logoColor=white) | Framework CSS utilitaire pour un design rapide et efficace. |
+
+## Instructions d'installation
+
+### Prérequis
+
+- Node.js (version 14 ou supérieure)
+- pnpm pour la gestion des paquets
+
+### Étapes d'installation
+
+1. Clonez le dépôt :
+   ```bash
+   git clone https://github.com/rbzdev/cercle-math-info.git
+   cd cercle-math-info
+   ```
+
+2. Installez les dépendances :
+   ```bash
+   pnpm install
+   ```
+
+3. Configurez les variables d'environnement (si nécessaire) :
+   Créez un fichier `.env.local` à la racine du projet et ajoutez-y vos configurations spécifiques.
+
+4. Démarrez le serveur de développement :
+   ```bash
+   pnpm run dev
+   ou
+   pnpm dev
+   ```
+
+## Utilisation
+
+Une fois le serveur démarré, ouvrez votre navigateur et accédez à `http://localhost:3000`. Vous pourrez naviguer à travers les différentes sections de la plateforme.
+
+## Structure du projet
+
+Voici un aperçu de la structure du projet :
+
+```
+cercle-math-info/
+├── app/
+│   ├── About/               # Page d'information sur le projet
+│   ├── Formations/          # Section des formations
+│   ├── Join/                # Page d'inscription
+│   ├── Login/               # Page de connexion
+│   ├── Meet/                # Section des événements
+│   ├── Members/             # Liste des membres
+│   ├── Profil/              # Page de profil utilisateur
+│   ├── globals.css          # Styles globaux
+│   ├── layout.tsx           # Mise en page principale
+│   └── page.tsx             # Point d'entrée de l'application
+├── components/              # Composants réutilisables
+│   └── ui/                  # Composants UI
+├── lib/                     # Bibliothèque de fonctions utilitaires
+├── public/                  # Ressources publiques (images, logos)
+├── .gitignore               # Fichiers à ignorer par Git
+├── next.config.ts           # Configuration de Next.js
+├── package.json             # Dépendances et scripts du projet
+└── tailwind.config.ts       # Configuration de Tailwind CSS
+```
+
+### Explication des fichiers principaux
+
+- **app/** : Contient les pages principales de l'application.
+- **components/** : Regroupe les composants réutilisables de l'interface utilisateur.
+- **lib/** : Contient des fonctions utilitaires pour gérer les données et les opérations.
+- **public/** : Contient les fichiers statiques accessibles publiquement.
+
+## Contribuer
+
+Nous accueillons les contributions ! Pour contribuer, veuillez suivre ces étapes :
+
+1. Forkez le projet.
+2. Créez une nouvelle branche (`git checkout -b feature/nouvelle-fonctionnalité`).
+3. Apportez vos modifications et validez (`git commit -m 'Ajout d\'une nouvelle fonctionnalité'`).
+4. Poussez votre branche (`git push origin feature/nouvelle-fonctionnalité`).
+5. Ouvrez une Pull Request.
+
+Merci de votre intérêt pour le Cercle Scientifique !
